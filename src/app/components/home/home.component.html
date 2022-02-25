@@ -1,1 +1,6 @@
 <p>home works!</p>
+
+<div *ngFor="let product of products">
+    <h4>{{product.name | json}}</h4>
+    <img [src]="product.imageUrl">
+</div>
