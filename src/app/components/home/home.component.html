@@ -1,6 +1,11 @@
 <p>home works!</p>
 
-<div *ngFor="let product of products">
-    <h4>{{product.name }}</h4>
-    <img [src]="product.imageUrl">
-</div>
+
+<section class="container">
+  <div *ngFor="let product of products">
+    <img [src]="product.imageUrl" class="product-img">
+    <h4 class="product-item">{{product.name }}</h4>
+    <h4 class="product-item">{{ product.price}} sek</h4>
+    <h4 class="product-item">{{ product.year}}</h4>
+  </div>
+</section>
