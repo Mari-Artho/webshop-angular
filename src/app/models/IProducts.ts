@@ -2,7 +2,7 @@ import { ICategory } from "./ICategories";
 
 //Below information is from api/products
 export interface IProducts {
-    id: number;
+    id: string;
     name: string;
     description: string;
     price: number;

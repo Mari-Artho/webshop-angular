@@ -9,6 +9,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ComfirmComponent } from './components/comfirm/comfirm.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AdminComponent } from './components/admin/admin.component';
     DetailComponent,
     CheckoutComponent,
     ComfirmComponent,
-    AdminComponent
+    AdminComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
