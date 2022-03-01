@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IProduct } from 'src/app/models/IProduct';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
@@ -9,13 +10,22 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class DetailComponent implements OnInit {
   movieId:string = '';
+  products: IProduct[] = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private service: ProductService) { }
 
   //There was a problem with 'null', so I added ' || "" '.
   ngOnInit(): void {
     this.movieId = this.route.snapshot.paramMap.get('id') || "";
-}
+    
+    this.service.products$.subscribe((dataFromApi:IProduct[] )=>{
+      this.products = dataFromApi;
+    
+    });
+    this.service.getProducts();
+
+    this.products = this.service.productInfo;
+  } 
 
 }
 

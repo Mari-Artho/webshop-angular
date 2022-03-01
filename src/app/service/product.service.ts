@@ -10,16 +10,22 @@ import { IProduct } from '../models/IProduct';
 export class ProductService {
   private products = new Subject<IProduct[]>();
   products$ = this.products.asObservable();
+  productInfo!: IProduct[];
 
   constructor(private http: HttpClient) { }
 
+  getProduct(id: string): IProduct | undefined {
+    return this.productInfo.find(product => product.id == id);
+  }
+
   //Get froj API.
   //apiUrl is in enviroment.ts, it's much easier to change it.
-  getProducts(){
+  getProducts(): void {
     this.http
     .get<IProduct[]>(environment.apiUrl)
     .subscribe((dataFromApi:IProduct[])=>{
       console.log(dataFromApi);
+      this.productInfo = dataFromApi;
       this.products.next(dataFromApi);
     })
   }
