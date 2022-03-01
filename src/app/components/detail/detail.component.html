@@ -3,7 +3,8 @@
 
 {{movieId}}番の映画が選択されました。
 
-<ul *ngFor= "let p of products" >
+ <ul *ngFor= "let p of products | selectById:movieId">
+    <li>{{p.id}}</li>
     <li>{{p.name}}</li>
 </ul>
 
