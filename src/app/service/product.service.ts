@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IProducts } from '../models/IProducts';
+import { IProduct } from '../models/IProduct';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private products = new Subject<IProducts[]>();
+  private products = new Subject<IProduct[]>();
   products$ = this.products.asObservable();
 
   constructor(private http: HttpClient) { }
@@ -17,8 +17,8 @@ export class ProductService {
   //apiUrl is in enviroment.ts, it's much easier to change it.
   getProducts(){
     this.http
-    .get<IProducts[]>(environment.apiUrl)
-    .subscribe((dataFromApi:IProducts[])=>{
+    .get<IProduct[]>(environment.apiUrl)
+    .subscribe((dataFromApi:IProduct[])=>{
       console.log(dataFromApi);
       this.products.next(dataFromApi);
     })
