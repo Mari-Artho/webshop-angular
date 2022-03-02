@@ -1,11 +1,13 @@
 <p>detail works!</p>
 
 
-{{movieId}}番の映画が選択されました。
+You choose No: {{movieId}} movie.
 
- <ul *ngFor= "let p of products | selectById:movieId">
+ <ul *ngFor= "let p of products | selectById:movieId ">
     <li>{{p.id}}</li>
     <li>{{p.name}}</li>
 </ul>
 
 <button (click)="backBtn()">BACK</button>
+
+<!-- <li *ngFor="let item of (items | myfilter:filterargs)"></li> -->

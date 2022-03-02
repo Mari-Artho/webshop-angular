@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'checkout', component: CheckoutComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: DetailComponent},
   { path: '**', component: NotfoundComponent},
   //redirectTO & pathMatch displayed 'home componet' when status is http://localhoset:4200/.
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: "", redirectTo: '/home', pathMatch: 'full'},
 ];
 
 @NgModule({
