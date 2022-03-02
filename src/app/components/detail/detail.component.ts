@@ -32,6 +32,13 @@ export class DetailComponent implements OnInit {
   backBtn(){
     this.location.back();
   }
+
+  //Add cart button => save to local storage.
+  saveProduct(){
+    console.log("User clicked add cart button.");
+    var movieId = JSON.stringify(this.movieId);
+    localStorage.setItem('key', movieId);
+  }
 }
 
 

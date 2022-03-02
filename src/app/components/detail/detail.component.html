@@ -4,13 +4,14 @@
     <li class="product-name">{{product.name}}</li>
     <li class="product-year">{{product.year}}</li>
     <li class="product-description">{{product.description}}</li>
+    <li class="product-added">Added: {{product.added | date}}</li>
     <li>{{product.price}} SEK</li>
-    <li><button>ADD CART</button></li>
+    <li><button (click)="saveProduct()">ADD CART</button></li>
     <li><button class="backBtn" (click)="backBtn()">BACK to LIST</button></li>
     </div>
 </ul>
 
-<!-- <li>{{p.added}}</li>
+<!-- 
 <li>{{p.productCategory}}</li>
 
  -->

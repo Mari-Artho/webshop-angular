@@ -8,6 +8,6 @@ export interface IProduct {
     price: number;
     imageUrl: string;
     year: number;
-    added: Date;
+    added: string;
     productCategory: ICategory[];
 }
