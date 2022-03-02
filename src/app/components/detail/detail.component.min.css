@@ -1,0 +1,2 @@
+.product{display:flex;justify-content:center}.product-detail{max-width:500px;margin:0 0 20px 20px}.product-name{font-size:2rem}.product-year,.product-description{border-bottom:dotted;padding-bottom:20px}.product-added{font-size:1rem;color:#4d4c4c}img{width:333px;height:500px}ul{font-family:"Merriweather Sans",sans-serif;font-size:1.5rem}ul li{margin:20px;list-style:none}button{width:130px;height:40px;border-radius:100px;font-size:15px;background-color:#fd7405;color:#fff}.backBtn{background-color:#f4d59d;color:#000}
+/*# sourceMappingURL=detail.component.min.css.map */

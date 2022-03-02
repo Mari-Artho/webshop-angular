@@ -1,0 +1,28 @@
+img {
+  width: 200px;
+  height: 297px;
+}
+img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
+  padding: 10px;
+}
+
+h4 {
+  margin-top: 5px;
+}
+
+.product-home {
+  margin-bottom: 30px;
+}
+
+footer {
+  background-color: rgba(233, 134, 134, 0.598);
+  text-align: center;
+}
+/*# sourceMappingURL=home.component.css.map */
