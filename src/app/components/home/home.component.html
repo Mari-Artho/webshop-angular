@@ -1,5 +1,5 @@
 <section class="container">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products" class="product-home">
   <a routerLink="/detail/{{product.id}}"><img [src]="product.imageUrl" class="product-img"></a>
     <h4 class="product-item">{{product.name }}</h4>
     <h4 class="product-item">{{ product.year}}</h4>

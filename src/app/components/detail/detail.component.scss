@@ -1,0 +1,47 @@
+.product {
+    display: flex;
+    justify-content: center;
+}
+
+.product-detail {
+   max-width: 500px;
+   margin: 0 0 20px 20px;
+}
+
+.product-name {
+    font-size: 2rem;
+}
+
+.product-year, .product-description {
+    border-bottom: dotted;
+    padding-bottom: 20px;
+}
+
+//Original size is width:666px, height:1000px
+img {
+    width: 333px;
+    height: 500px;
+}
+
+    ul{
+        font-family: 'Merriweather Sans', sans-serif;
+        font-size: 1.5rem;
+        li{
+            margin: 20px;
+            list-style: none;
+        }
+    }
+
+button {
+    width: 130px;
+    height: 40px;
+    border-radius: 100px;
+    font-size: 15px;
+    background-color: rgb(253, 116, 5);
+    color: white;
+}
+
+.backBtn {
+    background-color: rgb(244, 213, 157);
+    color: black;
+}

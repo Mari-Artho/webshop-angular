@@ -4,6 +4,9 @@
 img {
     width: 200px;
     height: 297px;
+    &:hover {
+        transform: scale(1.2, 1.2);
+      }
 }
 
 .container {
@@ -12,6 +15,14 @@ img {
   
     margin: 10px;
     padding: 10px;
+}
+
+h4 {
+    margin-top: 5px;
+}
+
+.product-home {
+    margin-bottom: 30px;
 }
 
 footer {
