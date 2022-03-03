@@ -1,3 +1,4 @@
+ <!--Sort movie by movieId, using Pipe-->
  <ul *ngFor= "let product of products | selectById:movieId " class="product">
     <li><img [src]="product.imageUrl" class="product-image"></li>
     <div class="product-detail">
@@ -10,11 +11,6 @@
     <li><button class="backBtn" (click)="backBtn()">BACK to LIST</button></li>
     </div>
 </ul>
-
-<!-- 
-<li>{{p.productCategory}}</li>
-
- -->
 
 
 

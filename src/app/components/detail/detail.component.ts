@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { IProduct } from 'src/app/models/IProduct';
 import { ProductService } from 'src/app/service/product.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +14,12 @@ export class DetailComponent implements OnInit {
   movieId:string = '';
   products: IProduct[] = [];
 
-  constructor(private route: ActivatedRoute, private location: Location, private service: ProductService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private location: Location, 
+    private service: ProductService,
+    private serviceCart: CartService,
+    ) { }
 
   //There was a problem with 'null', so I added ' || "" '.
   ngOnInit(): void {
@@ -24,8 +30,6 @@ export class DetailComponent implements OnInit {
     
     });
     this.service.getProducts();
-
-    this.products = this.service.productInfo;
   } 
 
   //Back to previous page.
@@ -36,8 +40,10 @@ export class DetailComponent implements OnInit {
   //Add cart button => save to local storage.
   saveProduct(){
     console.log("User clicked add cart button.");
+    //this.cart.serviceとか入れてconstructorにもservice:Cartserviceとかblabla書く
     var movieId = JSON.stringify(this.movieId);
-    localStorage.setItem('key', movieId);
+
+    this.serviceCart.add(movieId);
   }
 }
 

@@ -14,10 +14,6 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  // getProduct(id: string): IProduct | undefined {
-  //   return this.productInfo.find(product => product.id == id);
-  // }
-
   //Get froj API.
   //apiUrl is in enviroment.ts, it's much easier to change it.
   getProducts(): void {
