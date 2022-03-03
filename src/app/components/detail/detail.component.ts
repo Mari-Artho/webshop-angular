@@ -11,7 +11,7 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  movieId:string = '';
+  movieId: string = '';
   products: IProduct[] = [];
 
   constructor(
@@ -38,12 +38,8 @@ export class DetailComponent implements OnInit {
   }
 
   //Add cart button => save to local storage.
-  saveProduct(){
-    console.log("User clicked add cart button.");
-    //this.cart.serviceとか入れてconstructorにもservice:Cartserviceとかblabla書く
-    var movieId = JSON.stringify(this.movieId);
-
-    this.serviceCart.add(movieId);
+  addCart(movieId: string){
+    this.serviceCart.add(parseInt(movieId));
   }
 }
 

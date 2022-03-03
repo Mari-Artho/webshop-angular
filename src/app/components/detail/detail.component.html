@@ -7,7 +7,7 @@
     <li class="product-description">{{product.description}}</li>
     <li class="product-added">Added: {{product.added | date}}</li>
     <li>{{product.price}} SEK</li>
-    <li><button (click)="saveProduct()">ADD CART</button></li>
+    <li><button (click)="addCart(movieId)">ADD CART</button></li>
     <li><button class="backBtn" (click)="backBtn()">BACK to LIST</button></li>
     </div>
 </ul>
