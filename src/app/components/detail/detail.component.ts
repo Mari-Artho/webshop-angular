@@ -39,7 +39,10 @@ export class DetailComponent implements OnInit {
 
   //Add cart button => save to local storage.
   addCart(movieId: string){
-    this.serviceCart.add(parseInt(movieId));
+    // find product info with the matching ID
+    let product = this.products.find(product => product.id == movieId)
+    if (product != undefined) // if found, add to cart
+      this.serviceCart.add(product);
   }
 }
 

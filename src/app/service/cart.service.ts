@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { IProduct } from '../models/IProduct';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  items: number[] = [];
+  items: IProduct[] = [];
 
   constructor() { 
     //Get a data from JSON.
@@ -18,17 +19,19 @@ export class CartService {
   }
 
   //Add Cart
-  add(id:number) {
-    if (this.items.includes(id))
+  add(item:IProduct) {
+    //User can't select/add the same movie twice.
+    console.log(item);
+    if (this.items.includes(item))
       return;
-    this.items.push(id);
+    this.items.push(item);
     this.save();
   }
 
   //Remove Cart
-  remove(id:number){
+  remove(item:IProduct){
     for (let i = 0; i<this.items.length; i++){
-      if( this.items[i] == id) {
+      if( this.items[i] == item) {
         this.items.splice(i ,1);
         break;
       }

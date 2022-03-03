@@ -13,6 +13,6 @@ export class SelectByIdPipe implements PipeTransform {
     if (!products || !movieId) {
       return products;
     }
-    return products.filter(products => products.id == movieId);
+    return products.filter(product => product.id == movieId);
   }
 }
