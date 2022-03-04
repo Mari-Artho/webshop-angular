@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import { IProduct } from '../models/IProduct';
+import { BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   items: IProduct[] = [];
+  public cartItemList : any =[];
+  //BehaviorSubject holds the value that has flowed
+  public productList = new BehaviorSubject<any>([]);
 
   constructor() { 
     //Get a data from JSON.
@@ -21,28 +26,20 @@ export class CartService {
   //Add Cart
   add(item:IProduct) {
     //User can't select/add the same movie twice.
-    console.log(item);
     if (this.items.includes(item))
       return;
     this.items.push(item);
     this.save();
   }
 
-  //Remove Cart
-  remove(item:IProduct){
-    for (let i = 0; i<this.items.length; i++){
-      if( this.items[i] == item) {
-        this.items.splice(i ,1);
-        break;
-      }
+  //Remove Item from Shopping Cart
+  removeCartItem(i:any){
+    this.items.splice(i,1);
+    this.clearLocalStorage();
     }
-    this.save();
-  }
 
-  //Clear Cart
-  clearCart() {
-    this.items = [];
-    this.save();
+  clearLocalStorage(){
+    localStorage.setItem('cart',JSON.stringify(this.items));
   }
 
 

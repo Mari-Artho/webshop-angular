@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
+import { DetailComponent } from '../detail/detail.component';
 
 @Component({
   selector: 'app-checkout',
@@ -8,6 +9,7 @@ import { IProduct } from 'src/app/models/IProduct';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
+  public products : any = [];
   items = this.service.items;
   
   constructor (private service: CartService,) { }
@@ -15,20 +17,10 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //Remove Cart
-  remove(item:IProduct){
-    for (let i = 0; i<this.items.length; i++){
-      if( this.items[i] == item) {
-        this.items.splice(i ,1);
-        break;
-      }
-    }
-    this.save();
-  }
-
-  //Save Cart Items.
-  private save() {
-    localStorage.setItem('cart', JSON.stringify(this.items));
+  //Remove Item from Cart.
+  removeItem(i: any){
+    this.service.removeCartItem(i);
   }
 
 }
+
