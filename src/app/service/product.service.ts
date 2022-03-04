@@ -20,7 +20,6 @@ export class ProductService {
     this.http
     .get<IProduct[]>(environment.apiUrl)
     .subscribe((dataFromApi:IProduct[])=>{
-      console.log(dataFromApi);
       this.productInfo = dataFromApi;
       this.products.next(dataFromApi);
     })

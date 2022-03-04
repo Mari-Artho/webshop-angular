@@ -18,6 +18,20 @@ export class CartService {
     this.items = JSON.parse(itemsJSON);
   }
 
+  // //Get products
+  // getProducts(){
+  //   return this.productList.asObservable();
+  // }
+
+  // //Calculate total price
+  //   getTotalPrice(): number{
+  //   let grandTotal = 0;
+  //   this.cartItemList.map((a:any)=>{
+  //     grandTotal += a.total;
+  //   })
+  //   return grandTotal;
+  // }
+
   //Save Cart Items.
   private save() {
     localStorage.setItem('cart', JSON.stringify(this.items));
@@ -38,9 +52,10 @@ export class CartService {
     this.clearLocalStorage();
     }
 
+  //Clear local storage
   clearLocalStorage(){
     localStorage.setItem('cart',JSON.stringify(this.items));
   }
 
-
 }
+
