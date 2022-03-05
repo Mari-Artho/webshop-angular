@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder,FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +17,24 @@ export class CheckoutComponent implements OnInit {
   cartItems: IProduct[] = [];
   price: Subject<number> = new Subject<number>();
 
-  constructor (private service: CartService) { }
+  constructor (
+    private service: CartService,
+    private formBuilder: FormBuilder,
+    ) { }
+  
+    //group() method is get a user info.
+    checkoutForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
+
+    //user input info.
+    onSubmit(): void {
+      // Process checkout data here
+      this.items = this.service.clearCart();
+      console.warn('Thank you for your order!', this.checkoutForm.value);
+      this.checkoutForm.reset();
+    }
     
   ngOnInit(): void {
   }

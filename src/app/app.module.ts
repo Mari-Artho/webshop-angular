@@ -12,7 +12,7 @@ import { ComfirmComponent } from './components/comfirm/comfirm.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { CartComponent } from './components/cart/cart.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectByIdPipe } from './shared/select-by-id.pipe';
 
 
@@ -32,6 +32,8 @@ import { SelectByIdPipe } from './shared/select-by-id.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

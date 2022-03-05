@@ -42,5 +42,11 @@ export class CartService {
     localStorage.setItem('cart',JSON.stringify(this.items));
   }
 
+  //Clear cart
+  clearCart() {
+    this.items = [];
+    return this.items;
+  }
+
 }
 
