@@ -1,3 +1,16 @@
-
-
-
+ <section>   
+     <ul *ngFor="let item of items; let i = index" >
+        <!--TItle-->
+         <li class="th-title">{{item.name}}</li>
+        <!--Price-->
+         <li >{{item.price | currency:'SEK' }} </li>
+     </ul>
+  
+     <div class="total-price">
+       <p>TOTAL PRICE :  </p>
+       <p class="td-ttlPrice" [innerText]="totalPrice()|currency:'SEK' "></p>
+   </div>
+    
+   <a routerLink="/comfirm"><button class="checkout-Btn">COMFIRM ORDER</button></a>
+</section> 
+ 

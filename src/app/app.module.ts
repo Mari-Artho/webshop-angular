@@ -11,9 +11,10 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ComfirmComponent } from './components/comfirm/comfirm.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { CartComponent } from './components/cart/cart.component';
 
 import { SelectByIdPipe } from './shared/select-by-id.pipe';
-import { CartComponent } from './components/cart/cart.component';
+
 
 @NgModule({
   declarations: [
