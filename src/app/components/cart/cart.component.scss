@@ -1,0 +1,84 @@
+section{
+    font-family: 'Shippori Antique B1', sans-serif;
+}
+
+table{
+    margin: 0 5% 0 5%;
+}
+
+.table-head{
+    th{
+    padding: 50px 0 30px 0;
+    }
+}
+
+.table-row{
+    td{
+    border-bottom: 1px dashed;
+    :last-of-type{
+        border-bottom: black;
+    }
+    }
+}
+
+td{
+    text-align: center;
+}
+
+.th-index .th-price {
+    width: 5%;
+}
+
+.th-title{
+    width: 25%;
+    text-align: justify;
+}
+
+.th-poster{
+    width: 20% ;
+}
+
+.total-price{
+    display: flex;
+    justify-content: end;
+    font-size: 1.5rem;
+    margin-right: 200px;
+}
+
+.td-ttlPrice{
+    margin-left: 20px;
+   font-weight: bolder;
+}
+
+//--aspect w:200, h:255-
+.item-img{
+    width: 118px;
+    height: 150px;
+}
+
+.th-Btn{
+    height: 30px;
+    //hide button 
+    border: none; 
+    background: transparent;
+}
+
+.th-button{
+    margin-right: 100px;
+    width: 50px;
+}
+
+//trash can icon
+.fas{
+    font-size: 20px;
+    margin-right: 100px;
+}
+
+.checkout-Btn{
+    height: 50px;
+    width: 150px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: orange;
+    margin-left: 70%;
+}
