@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
-import { FormBuilder,FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout',
@@ -12,6 +12,7 @@ import { FormBuilder,FormControl, FormGroup } from '@angular/forms';
 export class CheckoutComponent implements OnInit {
   public products : any = [];
   items = this.service.items;
+
   //for total price
   //Subject class can be reactivated at any time, such as when the user clicks
   cartItems: IProduct[] = [];
@@ -22,10 +23,15 @@ export class CheckoutComponent implements OnInit {
     private formBuilder: FormBuilder,
     ) { }
   
-    //group() method is get a user info.
+    //group() method is get a user info in Form.
     checkoutForm = this.formBuilder.group({
-      name: '',
-      address: ''
+      id: '',
+      companyId: '',
+      created: '',
+      paymentMethod: '',
+      totalPrice: 0,
+      status: 0,
+      ordeRows: [],
     });
 
     //user input info.
@@ -41,8 +47,7 @@ export class CheckoutComponent implements OnInit {
 
   //Calculate total price
   totalPrice(){
-    let totalPrice: number =0;
-
+    let totalPrice:number = 0;
     for (let item of this.items){
       totalPrice += item.price ;
     }

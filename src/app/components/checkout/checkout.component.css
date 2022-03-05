@@ -1,2 +1,7 @@
-
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 10;
+  background-color: orange;
+}
 /*# sourceMappingURL=checkout.component.css.map */

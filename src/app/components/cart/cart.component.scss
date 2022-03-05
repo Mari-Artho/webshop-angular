@@ -15,27 +15,27 @@ table{
 .table-row{
     td{
     border-bottom: 1px dashed;
-    :last-of-type{
+    &:last-of-type{
         border-bottom: black;
+      }
     }
-    }
-}
+  }
 
 td{
     text-align: center;
 }
 
-.th-index .th-price {
-    width: 5%;
+.th-index .th-price .th-delete {
+    width: 20%;
 }
 
 .th-title{
-    width: 25%;
+    width: 40%;
     text-align: justify;
 }
 
 .th-poster{
-    width: 20% ;
+    width: 40% ;
 }
 
 .total-price{
@@ -53,7 +53,7 @@ td{
 //--aspect w:200, h:255-
 .item-img{
     width: 118px;
-    height: 150px;
+    height: 160px;
 }
 
 .th-Btn{

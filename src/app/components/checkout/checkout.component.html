@@ -1,42 +1,35 @@
+ <!--Total price-->
  <section>   
-     <ul *ngFor="let item of items; let i = index" >
-        <!--TItle-->
-         <li class="th-title">{{item.name}}</li>
-        <!--Price-->
+     <ul *ngFor="let item of items" >
+         <li >{{item.name}}</li>
          <li >{{item.price | currency:'SEK' }} </li>
      </ul>
   
-     <div class="total-price">
-       <p>TOTAL PRICE :  </p>
-       <p class="td-ttlPrice" [innerText]="totalPrice()|currency:'SEK' "></p>
-   </div>
-    
-   <a routerLink="/comfirm"><button class="checkout-Btn">COMFIRM ORDER</button></a>
-</section> 
+     <div>
+       <p>TOTAL PRICE IS  </p>
+       <p [innerText]="totalPrice()|currency:'SEK' "></p>
+     </div>
 
+<!--User input form-->
 <section>
-    <div class="cart-item" *ngFor="let item of items">
-        <span>{{ item.name }} </span>
-        <span>{{ item.price | currency }}</span>
-      </div>
-      
+      <p>Please input your information</p>
       <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-      
         <div>
-          <label for="name">
-            Name
-          </label>
+            <label for="id"> ID</label>
+            <input id="id" type="text" formControlName="id">
+          </div>
+        
+        <div>
+          <label for="name"> Name</label>
           <input id="name" type="text" formControlName="name">
         </div>
       
         <div>
-          <label for="address">
-            Address
-          </label>
-          <input id="address" type="text" formControlName="address">
+          <label for="address">Address</label>
+          <input id="address" type="tex"formControlName="address">
         </div>
       
-        <button class="button" type="submit">Purchase</button>
+        <a routerLink="/comfirm"><button class="button" type="submit">COMFIRM ORDER</button></a>
       
       </form>
 
