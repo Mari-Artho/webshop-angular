@@ -8,11 +8,13 @@ import { ComfirmComponent } from './components/comfirm/comfirm.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
   { path: 'admin', component: AdminComponent},
+  { path: 'cart', component: CartComponent},
   { path: 'checkout', component: CheckoutComponent},
   { path: 'comfirm', component: ComfirmComponent},
   { path: 'detail/:id', component: DetailComponent},

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { IProduct } from '../models/IProduct';
 import { BehaviorSubject } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,26 +17,12 @@ export class CartService {
     this.items = JSON.parse(itemsJSON);
   }
 
-  // //Get products
-  // getProducts(){
-  //   return this.productList.asObservable();
-  // }
-
-  // //Calculate total price
-  //   getTotalPrice(): number{
-  //   let grandTotal = 0;
-  //   this.cartItemList.map((a:any)=>{
-  //     grandTotal += a.total;
-  //   })
-  //   return grandTotal;
-  // }
-
-  //Save Cart Items.
+  //Save Cart Items to JSON.
   private save() {
     localStorage.setItem('cart', JSON.stringify(this.items));
   }
 
-  //Add Cart
+  //Add Item to Cart
   add(item:IProduct) {
     //User can't select/add the same movie twice.
     if (this.items.includes(item))

@@ -13,6 +13,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { SelectByIdPipe } from './shared/select-by-id.pipe';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SelectByIdPipe } from './shared/select-by-id.pipe';
     ComfirmComponent,
     AdminComponent,
     NotfoundComponent,
-    SelectByIdPipe
+    SelectByIdPipe,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
