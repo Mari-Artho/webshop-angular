@@ -3,6 +3,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -21,30 +22,32 @@ export class CheckoutComponent implements OnInit {
   constructor (
     private service: CartService,
     private formBuilder: FormBuilder,
+    private orderService: OrderService,
     ) { }
   
     //group() method is get a user info in Form.
     checkoutForm = this.formBuilder.group({
-      id: '',
       companyId: '',
-      created: '',
-      paymentMethod: '',
-      totalPrice: 0,
-      status: 0,
-      orderRows: [],
       firstName:'',
       lastName: '',
       address: '',
       email: '',
-      phone: '',
     });
 
     //user input info.
     onSubmit(): void {
       // Process checkout data here
-      this.items = this.service.clearCart();
+     // this.items = this.service.clearCart();
       console.warn('Thank you for your order!', this.checkoutForm.value);
-      this.checkoutForm.reset();
+
+      //save user info to local storage.
+      var userInfo = JSON.stringify(this.checkoutForm.value);
+      localStorage.setItem('userInfo', userInfo);
+      //Empty cart items when user click 'comfirm button'.
+      localStorage.removeItem('cart');
+      this.orderService.createContact(userInfo);
+      //console.log(userInfo);
+     // this.checkoutForm.reset();
     }
     
   ngOnInit(): void {
@@ -61,7 +64,7 @@ export class CheckoutComponent implements OnInit {
 
   //Order comfirm button
   addNewContact(){
-    console.log("Thank you for your purchase!!");
+    console.log("This is addNewContact method!!");
     const newFormData = {id:'Anna', companyId: 4 };
 
   }

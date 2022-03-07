@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IOrders } from 'src/app/models/IOrders';
+import { IProduct } from 'src/app/models/IProduct';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  orders: IOrders[] = [];
 
-  constructor() { }
+  constructor(private service: OrderService) { }
 
   ngOnInit(): void {
+  
   }
 
 }

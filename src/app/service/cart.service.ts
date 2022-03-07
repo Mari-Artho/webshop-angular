@@ -17,34 +17,30 @@ export class CartService {
     this.items = JSON.parse(itemsJSON);
   }
 
-  //Save Cart Items to JSON.
-  private save() {
-    localStorage.setItem('cart', JSON.stringify(this.items));
-  }
-
   //Add Item to Cart
   add(item:IProduct) {
     //User can't select/add the same movie twice.
     if (this.items.includes(item))
       return;
     this.items.push(item);
-    this.save();
+    this.updateLocalStorage();
   }
 
   //Remove Item from Shopping Cart
   removeCartItem(i:any){
     this.items.splice(i,1);
-    this.clearLocalStorage();
+    this.updateLocalStorage();
     }
 
-  //Clear local storage
-  clearLocalStorage(){
+  //Update local storage
+  updateLocalStorage(){
     localStorage.setItem('cart',JSON.stringify(this.items));
   }
 
   //Clear cart
   clearCart() {
     this.items = [];
+    this.updateLocalStorage();
     return this.items;
   }
 
