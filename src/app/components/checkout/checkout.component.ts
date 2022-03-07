@@ -10,7 +10,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
-  public products : any = [];
+  public products: any = [];
   items = this.service.items;
 
   //for total price
@@ -31,7 +31,12 @@ export class CheckoutComponent implements OnInit {
       paymentMethod: '',
       totalPrice: 0,
       status: 0,
-      ordeRows: [],
+      orderRows: [],
+      firstName:'',
+      lastName: '',
+      address: '',
+      email: '',
+      phone: '',
     });
 
     //user input info.
@@ -52,6 +57,13 @@ export class CheckoutComponent implements OnInit {
       totalPrice += item.price ;
     }
     return totalPrice ;
+  }
+
+  //Order comfirm button
+  addNewContact(){
+    console.log("Thank you for your purchase!!");
+    const newFormData = {id:'Anna', companyId: 4 };
+
   }
 
 }
