@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+}
+
+.neon{
+    color: rgb(37, 79, 3);     
+    font-size: 50px;   
+    font-family: cursive;
+    animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+    0%, 100% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+    }
+    50% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fcfcfc, 0 0 30px #fcfcfc, 0 0 40px #fc00de;
+    }
+  }

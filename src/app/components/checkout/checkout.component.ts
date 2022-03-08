@@ -4,6 +4,7 @@ import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
+import { IOrders } from 'src/app/models/IOrders';
 
 @Component({
   selector: 'app-checkout',
@@ -18,6 +19,7 @@ export class CheckoutComponent implements OnInit {
   //Subject class can be reactivated at any time, such as when the user clicks
   cartItems: IProduct[] = [];
   price: Subject<number> = new Subject<number>();
+  
 
   constructor (
     private service: CartService,
@@ -27,30 +29,38 @@ export class CheckoutComponent implements OnInit {
   
     //group() method is get a user info in Form.
     checkoutForm = this.formBuilder.group({
-      firstName: ['',[Validators.required, Validators.minLength(1)]],
-      lastName: ['',[Validators.required, Validators.minLength(1)]],
-      address: ['', [Validators.required, Validators.minLength(1)]],
-      email: [Validators.required, Validators.email],
+      firstName: ['',[Validators.required]],
+      lastName: ['',[Validators.required]],
+      address: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
     });
 
     //user input info.
     onSubmit(): void {
-      // Process checkout data here
-     // this.items = this.service.clearCart();
       console.warn('Thank you for your order!', this.checkoutForm.value);
 
+      //Post order data to Api.
+      this.orderService.addOrder(this.checkoutForm.value);
       //save user info to local storage.
       var userInfo = JSON.stringify(this.checkoutForm.value);
       localStorage.setItem('userInfo', userInfo);
       //Empty cart items when user click 'comfirm button'.
       localStorage.removeItem('cart');
-      this.orderService.createContact(userInfo);
-      //console.log(userInfo);
-     // this.checkoutForm.reset();
+      
+
+    //  id: number;
+    // companyId: number;
+    // created: string;
+    // createdBy: string;
+    // paymentMethod: string;
+    // totalPrice: number;
+    // status: number;
+    // orderRows:
     }
     
   ngOnInit(): void {
   }
+
 
   //Calculate total price
   totalPrice(){

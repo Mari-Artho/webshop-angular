@@ -18,7 +18,7 @@ export class ProductService {
   //apiUrl is in enviroment.ts, it's much easier to change it.
   getProducts(): void {
     this.http
-    .get<IProduct[]>(environment.apiUrl)
+    .get<IProduct[]>(environment.productApi)
     .subscribe((dataFromApi:IProduct[])=>{
       this.productInfo = dataFromApi;
       this.products.next(dataFromApi);

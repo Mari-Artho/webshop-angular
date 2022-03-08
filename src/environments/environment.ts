@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://medieinstitutet-wie-products.azurewebsites.net/api/products',
+  productApi: 'https://medieinstitutet-wie-products.azurewebsites.net/api/products',
+  orderApi: 'https://medieinstitutet-wie-products.azurewebsites.net/api/orders',
 };
 
 /*

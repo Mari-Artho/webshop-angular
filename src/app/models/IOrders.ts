@@ -1,7 +1,7 @@
 import { IOrderRows } from "./IOrderRows";
 
 export interface IOrders{
-    id: string;
+    id: number;
     companyId: number;
     created: string;
     createdBy: string;
@@ -11,3 +11,4 @@ export interface IOrders{
     orderRows:IOrderRows[];
 }
 
+  
