@@ -37,14 +37,20 @@ export class CheckoutComponent implements OnInit {
 
     //user input info.
     onSubmit(): void {
-      console.warn('Thank you for your order!', this.checkoutForm.value);
-      let order = <IOrder>this.checkoutForm.value;
-      order.companyId = 4;
+      let order: IOrder = {
+        companyId: 4,
+        createdBy: "Mamazon",
+        totalPrice: this.totalPrice(),
+        paymentMethod: "CC",
+        status: 0,
+        orderRows: []
+      };
       //Post order data to Api.
-      this.orderService.addOrder(this.checkoutForm.value);
+      this.orderService.addOrder(order);
+      console.warn('Thank you for your order!', order);
       //save user info to local storage.
-      var userInfo = JSON.stringify(this.checkoutForm.value);
-      localStorage.setItem('userInfo', userInfo);
+      var userInfo = JSON.stringify(order);
+      localStorage.setItem('order', userInfo);
       //Empty cart items when user click 'comfirm button'.
       localStorage.removeItem('cart');
       
