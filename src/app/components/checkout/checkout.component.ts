@@ -54,8 +54,6 @@ export class CheckoutComponent implements OnInit {
         status: 0,
         orderRows: orderRows,
       };
-      console.log(this.items);
-      console.log(JSON.stringify(order));
       //Post order data to Api.
       this.orderService.addOrder(order);
       console.log('Thank you for your order!', order);
