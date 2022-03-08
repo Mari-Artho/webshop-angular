@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
 
 @Component({
@@ -27,11 +27,10 @@ export class CheckoutComponent implements OnInit {
   
     //group() method is get a user info in Form.
     checkoutForm = this.formBuilder.group({
-      companyId: '',
-      firstName:'',
-      lastName: '',
-      address: '',
-      email: '',
+      firstName: ['',[Validators.required, Validators.minLength(1)]],
+      lastName: ['',[Validators.required, Validators.minLength(1)]],
+      address: ['', [Validators.required, Validators.minLength(1)]],
+      email: [Validators.required, Validators.email],
     });
 
     //user input info.
@@ -60,13 +59,6 @@ export class CheckoutComponent implements OnInit {
       totalPrice += item.price ;
     }
     return totalPrice ;
-  }
-
-  //Order comfirm button
-  addNewContact(){
-    console.log("This is addNewContact method!!");
-    const newFormData = {id:'Anna', companyId: 4 };
-
   }
 
 }

@@ -4,10 +4,6 @@
 <section class="form">
       <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
         <h1>Create New Contact</h1>
-        <div>
-            <label for="id">Company ID</label>
-            <input id="id" type="text" formControlName="companyId" placeholder="Please input 4">
-          </div>
         
         <div>
           <label for="firstName">First Name</label>
@@ -29,7 +25,7 @@
           <input id="email" type="tex" formControlName="email">
         </div>
       
-        <a routerLink="/comfirm"><button class="button" type="submit" (click)="onSubmit()" (click)=" addNewContact()">COMFIRM ORDER</button></a>
+        <a routerLink="/comfirm"><button class="button" type="submit" (click)="onSubmit()">COMFIRM ORDER</button></a>
     
       </form>
 </section>
