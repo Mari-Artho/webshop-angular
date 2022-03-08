@@ -1,4 +1,4 @@
-import { IOrderRows } from "./IOrderRows";
+import { IOrderRow } from "./IOrderRow";
 
 export interface IOrder {
     companyId: number;
@@ -6,7 +6,5 @@ export interface IOrder {
     paymentMethod: string;
     totalPrice: number;
     status: number;
-    orderRows:IOrderRows[];
+    orderRows:IOrderRow[];
 }
-
-  

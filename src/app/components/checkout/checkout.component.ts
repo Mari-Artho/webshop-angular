@@ -5,12 +5,14 @@ import { Subject } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
 import { IOrder } from 'src/app/models/IOrder';
+import { IOrderRow } from 'src/app/models/IOrderRow';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss']
 })
+
 export class CheckoutComponent implements OnInit {
   public products: any = [];
   items = this.service.items;
@@ -19,7 +21,6 @@ export class CheckoutComponent implements OnInit {
   //Subject class can be reactivated at any time, such as when the user clicks
   cartItems: IProduct[] = [];
   price: Subject<number> = new Subject<number>();
-  
 
   constructor (
     private service: CartService,
@@ -37,21 +38,31 @@ export class CheckoutComponent implements OnInit {
 
     //user input info.
     onSubmit(): void {
+      let orderRows = [];
+      for (let item of this.items) {
+        let row: IOrderRow = {
+          productId: parseInt(item.id),
+          amount: 1 // amount = 1 for virtual product
+        }
+        orderRows.push(row);
+      }
       let order: IOrder = {
         companyId: 4,
         createdBy: "Mamazon",
         totalPrice: this.totalPrice(),
         paymentMethod: "CC",
         status: 0,
-        orderRows: []
+        orderRows: orderRows,
       };
+      console.log(this.items);
+      console.log(JSON.stringify(order));
       //Post order data to Api.
       this.orderService.addOrder(order);
-      console.warn('Thank you for your order!', order);
+      console.log('Thank you for your order!', order);
       //save user info to local storage.
       var userInfo = JSON.stringify(order);
       localStorage.setItem('order', userInfo);
-      //Empty cart items when user click 'comfirm button'.
+      //Empty cart items when user click 'confirm button'.
       localStorage.removeItem('cart');
     }
     
