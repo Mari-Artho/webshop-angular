@@ -1,5 +1,9 @@
+<section class="input-section">
+  <input type="text" class="search-input" [(ngModel)]="searchText" placeholder="Search a movie">
+</section>
+
 <section class="container">
-  <div *ngFor="let product of products" class="product-home">
+  <div *ngFor="let product of products | filter:searchText" class="product-home">
   <a routerLink="/detail/{{product.id}}"><img [src]="product.imageUrl" class="product-img"></a>
     <h4 class="product-item">{{product.name }}</h4>
     <h4 class="product-item">{{ product.year}}</h4>

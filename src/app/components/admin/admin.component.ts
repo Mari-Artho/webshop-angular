@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IOrders } from 'src/app/models/IOrders';
+import { IOrder } from 'src/app/models/IOrder';
 import { IProduct } from 'src/app/models/IProduct';
 import { ProductService } from 'src/app/service/product.service';
 import { OrderService } from 'src/app/service/order.service';
@@ -11,7 +11,7 @@ import { OrderService } from 'src/app/service/order.service';
 })
 export class AdminComponent implements OnInit {
   products: IProduct[] = [];
-  orders: IOrders[] = [];
+  orders: IOrder[] = [];
 
 
   constructor( 

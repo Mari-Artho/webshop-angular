@@ -4,7 +4,7 @@ import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
 import { FormBuilder, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
-import { IOrders } from 'src/app/models/IOrders';
+import { IOrder } from 'src/app/models/IOrder';
 
 @Component({
   selector: 'app-checkout',
@@ -38,7 +38,8 @@ export class CheckoutComponent implements OnInit {
     //user input info.
     onSubmit(): void {
       console.warn('Thank you for your order!', this.checkoutForm.value);
-
+      let order = <IOrder>this.checkoutForm.value;
+      order.companyId = 4;
       //Post order data to Api.
       this.orderService.addOrder(this.checkoutForm.value);
       //save user info to local storage.

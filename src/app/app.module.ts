@@ -4,7 +4,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectByIdPipe } from './shared/select-by-id.pipe';
-
+import { Ng2SearchPipeModule} from 'ng2-search-filter';
 
 //Components
 import { AppComponent } from './app.component';
@@ -34,6 +34,7 @@ import { CartComponent } from './components/cart/cart.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

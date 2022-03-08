@@ -9,7 +9,9 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class HomeComponent implements OnInit {
   products: IProduct[] = [];
-
+  //for search movie
+  searchText:any;
+  
   constructor(private service: ProductService) { }
 
   ngOnInit(): void {
