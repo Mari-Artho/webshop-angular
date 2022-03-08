@@ -53,16 +53,6 @@ export class CheckoutComponent implements OnInit {
       localStorage.setItem('order', userInfo);
       //Empty cart items when user click 'comfirm button'.
       localStorage.removeItem('cart');
-      
-
-    //  id: number;
-    // companyId: number;
-    // created: string;
-    // createdBy: string;
-    // paymentMethod: string;
-    // totalPrice: number;
-    // status: number;
-    // orderRows:
     }
     
   ngOnInit(): void {
