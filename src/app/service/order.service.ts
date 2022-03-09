@@ -19,7 +19,6 @@ const httpOptions = {
 export class OrderService {
   private orders = new Subject<IOrder[]>();
   orders$ = this.orders.asObservable();
-  //userInfo!: IOrder[];
   orderInfo!: IOrder[];
 
   constructor(private http:HttpClient) { }
@@ -55,7 +54,5 @@ removeOrder(id:number){
   this.http.delete(environment.orderApi + "/" + id + "?companyId=444" )
   .subscribe(()=>this.getOrders());
 }
-
-//
 
 }
