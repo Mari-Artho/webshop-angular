@@ -39,6 +39,15 @@ export class CheckoutComponent implements OnInit {
 
     //Action when the user presses the order button
     onSubmit(): void {
+      //Add user input info
+      let user:IUser;
+      user = this.checkoutForm.value;
+      //Post user data to Api
+      this.orderService.addUser(user);
+      let userData = user.firstName + " " + user.lastName + " <" +
+      user.email + ">"
+      console.log(userData);
+
       let orderRows = [];
       for (let item of this.items) {
         let row: IOrderRow = {
@@ -51,7 +60,7 @@ export class CheckoutComponent implements OnInit {
         // previous student used my companyId '4', so I chose '444'.
         id: 0,
         companyId: 444,
-        createdBy: "Mamazon",
+        createdBy: userData,
         totalPrice: this.totalPrice(),
         paymentMethod: "CC",
         status: 0,
@@ -59,13 +68,6 @@ export class CheckoutComponent implements OnInit {
       };
       //Post order data to Api
       this.orderService.addOrder(order);
-
-      //Add user input info
-      let user:IUser;
-      user = this.checkoutForm.value;
-      //Post user data to Api
-      this.orderService.addUser(user);
-      console.log(user);
 
       //save user info to local storage.
       var userInfo = JSON.stringify(order);
