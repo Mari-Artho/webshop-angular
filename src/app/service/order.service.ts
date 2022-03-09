@@ -52,7 +52,7 @@ getOrders():void{
 
 //Cancel order
 removeOrder(id:number){
-  this.http.delete(environment.orderApi + "?companyId=444" )
+  this.http.delete(environment.orderApi + "/" + id + "?companyId=444" )
   .subscribe(()=>this.getOrders());
 }
 

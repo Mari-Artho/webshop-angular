@@ -32,7 +32,7 @@ export class AdminComponent implements OnInit {
   }
 
   cancelOrder(id:number){
-    console.log('order was cenceled');
+    console.log('order ' + id + ' was canceled');
     this.orderService.removeOrder(id);
   }
 

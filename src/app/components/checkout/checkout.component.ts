@@ -49,7 +49,7 @@ export class CheckoutComponent implements OnInit {
       }
       let order: IOrder = {
         // previous student used my companyId '4', so I chose '444'.
-        orderId:1,
+        id: 0,
         companyId: 444,
         createdBy: "Mamazon",
         totalPrice: this.totalPrice(),

@@ -7,8 +7,9 @@
     <li>Payment Method: {{order.paymentMethod}}</li>
     <li>Total Price: {{order.totalPrice | currency}}</li>
     <li>Order Status: {{order.status}}</li>
+    <li>Order ID: {{order.id}}</li>
     <li>Order Rows: {{order.orderRows | json}}</li>
-    <button (click)="cancelOrder(order.orderId)">CANCEL ORDER</button>
+    <button (click)="cancelOrder(order.id)">CANCEL ORDER</button>
 </ul>
 
 
