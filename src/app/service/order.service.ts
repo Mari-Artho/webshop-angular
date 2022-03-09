@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IOrder } from '../models/IOrder';
 import { HttpHeaders } from '@angular/common/http';
+import { IUser } from '../models/IUser';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,7 +19,7 @@ const httpOptions = {
 export class OrderService {
   private orders = new Subject<IOrder[]>();
   orders$ = this.orders.asObservable();
-  userInfo!: IOrder[];
+  //userInfo!: IOrder[];
   orderInfo!: IOrder[];
 
   constructor(private http:HttpClient) { }
@@ -27,18 +28,34 @@ export class OrderService {
 addOrder(order: IOrder) {
   return this.http.post<IOrder>(environment.orderApi,
     order, httpOptions).subscribe((result) => {
-      console.warn(result)
+      console.warn(result);
     });
 }
 
-//get orders data
+addUser(user:IUser){
+  return this.http.post<IUser>(environment.orderApi, user, httpOptions)
+  .subscribe((result)=>{
+    console.warn(result);
+  })
+}
+
+//Get orders data
 getOrders():void{
+  //I changed my company ID 4 => 444.
   this.http
-  .get<IOrder[]>(environment.orderApi + '?companyId=0004')
+  .get<IOrder[]>(environment.orderApi + '?companyId=444')
   .subscribe((dataFromApi:IOrder[])=>{
-  this.orderInfo = dataFromApi;
+  //this.orderInfo = dataFromApi;
   this.orders.next(dataFromApi);
   });
 } 
+
+//Cancel order
+removeOrder(id:number){
+  this.http.delete(environment.orderApi + "?companyId=444" )
+  .subscribe(()=>this.getOrders());
+}
+
+//
 
 }

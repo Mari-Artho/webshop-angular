@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
 import { IOrder } from 'src/app/models/IOrder';
 import { IOrderRow } from 'src/app/models/IOrderRow';
+import { IUser } from 'src/app/models/IUser';
 
 @Component({
   selector: 'app-checkout',
@@ -15,15 +16,15 @@ import { IOrderRow } from 'src/app/models/IOrderRow';
 
 export class CheckoutComponent implements OnInit {
   public products: any = [];
-  items = this.service.items;
+  items = this.cartService.items;
 
-  //for total price
+  //For total price
   //Subject class can be reactivated at any time, such as when the user clicks
   cartItems: IProduct[] = [];
-  price: Subject<number> = new Subject<number>();
+  price:Subject<number> = new Subject<number>();
 
   constructor (
-    private service: CartService,
+    private cartService: CartService,
     private formBuilder: FormBuilder,
     private orderService: OrderService,
     ) { }
@@ -36,7 +37,7 @@ export class CheckoutComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
     });
 
-    //user input info.
+    //Action when the user presses the order button
     onSubmit(): void {
       let orderRows = [];
       for (let item of this.items) {
@@ -47,16 +48,25 @@ export class CheckoutComponent implements OnInit {
         orderRows.push(row);
       }
       let order: IOrder = {
-        companyId: 4,
+        // previous student used my companyId '4', so I chose '444'.
+        orderId:1,
+        companyId: 444,
         createdBy: "Mamazon",
         totalPrice: this.totalPrice(),
         paymentMethod: "CC",
         status: 0,
         orderRows: orderRows,
       };
-      //Post order data to Api.
+      //Post order data to Api
       this.orderService.addOrder(order);
-      console.log('Thank you for your order!', order);
+
+      //Add user input info
+      let user:IUser;
+      user = this.checkoutForm.value;
+      //Post user data to Api
+      this.orderService.addUser(user);
+      console.log(user);
+
       //save user info to local storage.
       var userInfo = JSON.stringify(order);
       localStorage.setItem('order', userInfo);
@@ -66,7 +76,6 @@ export class CheckoutComponent implements OnInit {
     
   ngOnInit(): void {
   }
-
 
   //Calculate total price
   totalPrice(){

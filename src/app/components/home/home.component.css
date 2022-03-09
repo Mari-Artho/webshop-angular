@@ -22,7 +22,7 @@ h4 {
 }
 
 .product-item {
-  max-width: 10px;
+  max-width: 240px;
 }
 
 .input-section {
@@ -36,5 +36,15 @@ h4 {
   height: 40px;
   align-items: center;
   font-size: 1.2rem;
+}
+
+.fas {
+  margin: 0 0 20px 0px;
+  font-size: 40px;
+}
+
+button {
+  border: none;
+  background: transparent;
 }
 /*# sourceMappingURL=home.component.css.map */

@@ -1,8 +1,15 @@
-<h1>Admin page</h1>>
+<h1>Administrator page</h1>
 
-<div *ngFor="let order of orders"></div>
+<ul *ngFor="let order of orders let i='index'">
+    <li class="index">{{i+1}}</li>
+    <li>Company Id: {{order.companyId}}</li>
+    <li>Created By: {{order.createdBy}}</li>
+    <li>Payment Method: {{order.paymentMethod}}</li>
+    <li>Total Price: {{order.totalPrice | currency}}</li>
+    <li>Order Status: {{order.status}}</li>
+    <li>Order Rows: {{order.orderRows | json}}</li>
+    <button (click)="cancelOrder(order.orderId)">CANCEL ORDER</button>
+</ul>
 
 
-
-<div *ngFor="let product of products"></div>
 
