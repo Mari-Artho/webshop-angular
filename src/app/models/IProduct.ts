@@ -1,4 +1,4 @@
-import { ICategory } from "./ICategories";
+import { ICategory } from "./ICategory";
 
 //Below information is from api/products
 export interface IProduct {

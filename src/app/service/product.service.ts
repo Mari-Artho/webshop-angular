@@ -4,7 +4,7 @@ import { Subject, subscribeOn } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IProduct } from '../models/IProduct';
 import { BehaviorSubject } from 'rxjs';
-import { ICategory } from '../models/ICategories';
+import { ICategory } from '../models/ICategory';
 
 @Injectable({
   providedIn: 'root'
