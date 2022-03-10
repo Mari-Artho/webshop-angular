@@ -29,12 +29,6 @@ export class HomeComponent implements OnInit {
       this.service.categories$.subscribe((dataFromApi: ICategory[])=>{
       this.categories = dataFromApi;
       })
-      // this.filterCategory = dataFromApi;
-      // this.products.forEach((a:any)=>{
-      //   if(a.category==="Action"){
-      //     a.category='Action'
-      //   }
-      // })
     });
     this.service.getProducts();
     this.service.getCategories();
@@ -51,19 +45,4 @@ export class HomeComponent implements OnInit {
     console.log(this.searchTerm);
     this.service.search.next(this.searchTerm);
   }
-
-  //for categories
-
-
-  // // //for categories
-  // filter(category:string){
-  //   this.filterCategory == this.products
-  //   .filter(a:any) => {
-  //     if(arguments.category == category || category==''){
-  //       return arguments;
-  //     }
-  //   }
-  // }
-
-
 }

@@ -22,7 +22,7 @@
 <!--Movie Products||categories-->
 <section class="container">
   <ng-container *ngFor="let product of products |filter:searchKey " class="product-home">
-    <ng-container *ngFor="let category of product.productCategory; let i = index"><!-- we need to index to break after the first iteration -->
+    <ng-container *ngFor="let category of product.productCategory; let i = index"><!-- we need the index to break after the first iteration when showing all movies -->
     <div *ngIf="((categoryFilter == 0) && (i == 0)) || (category.categoryId == categoryFilter)">
   <a routerLink="/detail/{{product.id}}"><img [src]="product.imageUrl" class="product-img"></a>
     <h4 class="product-item">{{product.name}}</h4>
