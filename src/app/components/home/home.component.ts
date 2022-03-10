@@ -10,8 +10,6 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class HomeComponent implements OnInit {
   products: IProduct[] = [];
-  //category
-  public filterCategory:any;
 
   //categories
   categories:ICategory[] = [];

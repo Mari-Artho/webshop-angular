@@ -8,12 +8,15 @@
 
 <!--Categories-->
 <section class="container-search">
+  <!--Button is better than <a> for accessibility-->
   <button (click)="categoryFilter=0">ALL PRODUCTS</button>
   <button (click)="categoryFilter=5">ACTION</button>
   <button (click)="categoryFilter=6">THRILLER</button>
   <button (click)="categoryFilter=7">COMEDY</button>
   <button (click)="categoryFilter=8">SCI-FI</button>
 
+  <!--The data in the loop below does not always load, perhaps due to 
+  connection issues; the buttons above use predefined categories to avoid this.-->
   <!--<div *ngFor="let category of categories">
     <button (click)="categoryFilter = category.id">{{category.name}}</button>
   </div>-->
