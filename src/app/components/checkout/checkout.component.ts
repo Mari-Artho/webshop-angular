@@ -44,8 +44,8 @@ export class CheckoutComponent implements OnInit {
       user = this.checkoutForm.value;
       //Post user data to Api
       this.orderService.addUser(user);
-      let userData = user.firstName + " " + user.lastName + " <" +
-      user.email + ">";
+      let userData = user.firstName + " " + user.lastName + " , email: " +
+      user.email ;
       console.log(userData);
 
       let orderRows = [];

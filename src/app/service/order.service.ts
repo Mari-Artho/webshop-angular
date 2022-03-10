@@ -20,6 +20,8 @@ export class OrderService {
   private orders = new Subject<IOrder[]>();
   orders$ = this.orders.asObservable();
   orderInfo!: IOrder[];
+  //I changed my company ID 4 => 444.
+  companyId =444;
 
   constructor(private http:HttpClient) { }
 
@@ -40,9 +42,8 @@ addUser(user:IUser){
 
 //Get orders data
 getOrders():void{
-  //I changed my company ID 4 => 444.
   this.http
-  .get<IOrder[]>(environment.orderApi + '?companyId=444')
+  .get<IOrder[]>(environment.orderApi + '?companyId=' + this.companyId)
   .subscribe((dataFromApi:IOrder[])=>{
   //this.orderInfo = dataFromApi;
   this.orders.next(dataFromApi);
@@ -51,7 +52,7 @@ getOrders():void{
 
 //Cancel order
 removeOrder(id:number){
-  this.http.delete(environment.orderApi + "/" + id + "?companyId=444" )
+  this.http.delete(environment.orderApi + "/" + id + '?companyId=' + this.companyId )
   .subscribe(()=>this.getOrders());
 }
 
