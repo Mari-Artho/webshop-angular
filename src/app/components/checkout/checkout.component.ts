@@ -45,7 +45,7 @@ export class CheckoutComponent implements OnInit {
       //Post user data to Api
       this.orderService.addUser(user);
       let userData = user.firstName + " " + user.lastName + " <" +
-      user.email + ">"
+      user.email + ">";
       console.log(userData);
 
       let orderRows = [];
@@ -57,7 +57,7 @@ export class CheckoutComponent implements OnInit {
         orderRows.push(row);
       }
       let order: IOrder = {
-        // previous student used my companyId '4', so I chose '444'.
+        // previous student used my companyId '4', so I choose '444'.
         id: 0,
         companyId: 444,
         createdBy: userData,

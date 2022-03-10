@@ -1,7 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { IProduct } from '../models/IProduct';
-import { ProductService } from '../service/product.service';
-import { DetailComponent } from '../components/detail/detail.component';
 
 @Pipe({
   name: 'selectById'

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Subject, subscribeOn } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IProduct } from '../models/IProduct';
+import { BehaviorSubject } from 'rxjs';
+import { ICategory } from '../models/ICategories';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +14,16 @@ export class ProductService {
   products$ = this.products.asObservable();
   productInfo!: IProduct[];
 
+  //For categories
+  private categories = new Subject<ICategory[]>();
+  categories$ = this.categories.asObservable();
+
+  //For search movie
+  public search = new BehaviorSubject<string>('');
+
   constructor(private http: HttpClient) { }
 
-  //Get from API.
+  //Data from API.
   //apiUrl is in enviroment.ts, it's much easier to change it.
   getProducts(): void {
     this.http
@@ -22,6 +31,13 @@ export class ProductService {
     .subscribe((dataFromApi:IProduct[])=>{
       this.productInfo = dataFromApi;
       this.products.next(dataFromApi);
+    })
+  }
+
+  //Categories
+  getCategories(){
+    this.http.get<ICategory[]>(environment.categoryApi).subscribe((dataFromApi)=>{
+      this.categories.next(dataFromApi);
     })
   }
 

@@ -39,12 +39,21 @@ h4 {
 }
 
 .fas {
-  margin: 0 0 20px 0px;
+  margin: 0 0 20px 20px;
   font-size: 40px;
 }
 
 button {
   border: none;
   background: transparent;
+}
+
+.container-search {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f5e0b3;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 0px;
+  padding-top: 20px;
 }
 /*# sourceMappingURL=home.component.css.map */

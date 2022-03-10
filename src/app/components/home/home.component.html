@@ -1,13 +1,34 @@
+<!--Search Input-->
 <section class="input-section">
-  <input type="text" class="search-input" [(ngModel)]="searchText" placeholder="Search a movie">
+  <input type="text" class="search-input" 
+  [(ngModel)]="searchTerm" (keyup)="search($event)"
+  placeholder="Search a movie">
   <button><i class="fas fa-search"></i></button>
 </section>
 
+<!--Categories-->
+<section class="container-search">
+  <button (click)="categoryFilter=0">ALL PRODUCTS</button>
+  <button (click)="categoryFilter=5">ACTION</button>
+  <button (click)="categoryFilter=6">THRILLER</button>
+  <button (click)="categoryFilter=7">COMEDY</button>
+  <button (click)="categoryFilter=8">SCI-FI</button>
+
+  <!--<div *ngFor="let category of categories">
+    <button (click)="categoryFilter = category.id">{{category.name}}</button>
+  </div>-->
+</section>
+
+<!--Movie Products||categories-->
 <section class="container">
-  <div *ngFor="let product of products | filter:searchText" class="product-home">
+  <ng-container *ngFor="let product of products |filter:searchKey " class="product-home">
+    <ng-container *ngFor="let category of product.productCategory; let i = index"><!-- we need to index to break after the first iteration -->
+    <div *ngIf="((categoryFilter == 0) && (i == 0)) || (category.categoryId == categoryFilter)">
   <a routerLink="/detail/{{product.id}}"><img [src]="product.imageUrl" class="product-img"></a>
-    <h4 class="product-item">{{product.name }}</h4>
-    <h4 class="product-item">{{ product.year}}</h4>
-  </div>
+    <h4 class="product-item">{{product.name}}</h4>
+    <h4 class="product-item">{{product.year}}</h4>
+    </div>
+    </ng-container>
+  </ng-container>
 </section>
 
