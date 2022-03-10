@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
   //for search movie
   search(event:any){
     this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
     this.service.search.next(this.searchTerm);
   }
 }
