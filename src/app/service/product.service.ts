@@ -6,7 +6,6 @@ import { IProduct } from '../models/IProduct';
 import { BehaviorSubject } from 'rxjs';
 import { ICategory } from '../models/ICategory';
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comfirm.component.scss']
 })
 export class ComfirmComponent implements OnInit {
-
+  message = 'Thank you for your order!';
   constructor() { }
 
   ngOnInit(): void {
