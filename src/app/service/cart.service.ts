@@ -20,7 +20,8 @@ export class CartService {
   //Add Item to Cart
   add(item:IProduct) {
     //User can't select/add the same movie twice.
-    if (this.items.includes(item))
+    let id = item.id;
+    if (this.items.find(prod => prod.id == id))
       return;
     this.items.push(item);
     this.updateLocalStorage();
