@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectByIdPipe } from './shared/select-by-id.pipe';
 import { Ng2SearchPipeModule} from 'ng2-search-filter';
+import { SearchFilterPipe } from './shared/search-filter.pipe';
 
 //Components
 import { AppComponent } from './app.component';
@@ -15,7 +16,7 @@ import { ComfirmComponent } from './components/comfirm/comfirm.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { CartComponent } from './components/cart/cart.component';
-import { SearchFilterPipe } from './shared/search-filter.pipe';
+
 
 @NgModule({
   declarations: [

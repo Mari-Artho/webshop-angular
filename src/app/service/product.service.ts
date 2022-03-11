@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject, subscribeOn } from 'rxjs';
+import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IProduct } from '../models/IProduct';
 import { BehaviorSubject } from 'rxjs';
 import { ICategory } from '../models/ICategory';
+
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 import { IProduct } from 'src/app/models/IProduct';
 import { Subject } from 'rxjs';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
 import { IOrder } from 'src/app/models/IOrder';
 import { IOrderRow } from 'src/app/models/IOrderRow';

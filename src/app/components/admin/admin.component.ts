@@ -10,8 +10,8 @@ import { OrderService } from 'src/app/service/order.service';
 export class AdminComponent implements OnInit {
   orders: IOrder[] = [];
 
-  constructor( 
-    private orderService: OrderService) { }
+  constructor(
+private orderService: OrderService) { }
 
   ngOnInit(): void {
    //get a order data
@@ -22,7 +22,6 @@ export class AdminComponent implements OnInit {
   }
 
   cancelOrder(id:number){
-    console.log('order ' + id + ' was canceled');
     this.orderService.removeOrder(id);
   }
 

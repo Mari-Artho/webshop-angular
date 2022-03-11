@@ -28,7 +28,7 @@ h4 {
 .input-section {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 30px 0 0 0;
 }
 
 .search-input {
@@ -53,7 +53,12 @@ button {
   justify-content: space-around;
   background-color: #f5e0b3;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  height: 0px;
+  height: 40px;
   padding-top: 20px;
+}
+
+.navBtn {
+  font-size: 1rem;
+  margin-bottom: 30px;
 }
 /*# sourceMappingURL=home.component.css.map */
