@@ -30,4 +30,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // Test 1
+  it('should have the filter set to 0 by default', () => {
+    expect(component.categoryFilter).toBe(0);
+  });
 });
