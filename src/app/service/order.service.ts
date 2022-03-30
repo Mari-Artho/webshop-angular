@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { IOrder } from '../models/IOrder';
 import { HttpHeaders } from '@angular/common/http';
 import { IUser } from '../models/IUser';
+import { EventEmitter } from '@angular/core';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,7 +22,7 @@ export class OrderService {
   orders$ = this.orders.asObservable();
   orderInfo!: IOrder[];
   //I changed my company ID 4 => 444.
-  companyId =444;
+  companyId = 444;
 
   constructor(private http:HttpClient) { }
 
