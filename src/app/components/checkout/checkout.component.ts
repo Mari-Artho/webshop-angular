@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
     private orderService: OrderService,
     ) { }
   
-    //group() method is get a user info in Form.
+    // //group() method is get a user info in Form.
     checkoutForm = this.formBuilder.group({
       firstName: ['',[Validators.required]],
       lastName: ['',[Validators.required]],

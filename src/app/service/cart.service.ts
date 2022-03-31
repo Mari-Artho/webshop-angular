@@ -11,7 +11,8 @@ export class CartService {
   public cartItemList : any =[];
   //BehaviorSubject holds the value that has flowed
   public productList = new BehaviorSubject<any>([]);
-
+  
+  //show item in the cart
   countItem = new EventEmitter<number>();
 
   constructor() { 

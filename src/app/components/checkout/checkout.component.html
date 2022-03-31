@@ -2,30 +2,30 @@
 
 <!--User input form-->
 <section class="form">
-      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <form #calcForm='ngForm' (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">
         <h1>Create New Contact</h1>
         
         <div>
           <label for="firstName">First Name</label>
-          <input id="firstName" type="text" formControlName="firstName">
+          <input id="firstName" type="text" name="firstName" formControlName="firstName"> 
         </div>
 
         <div>
           <label for="lastName">Last Name</label>
-          <input id="lastName" type="text" formControlName="lastName">
+          <input id="lastName" type="text" name="lastName" formControlName="lastName">
         </div>
       
         <div>
           <label for="address">Address</label>
-          <input id="address" type="tex" formControlName="address">
+          <input id="address" type="tex"  name="address" formControlName="address">
         </div>
 
         <div>
           <label for="email">Email</label>
-          <input id="email" type="tex" formControlName="email">
+          <input id="email" type="tex" name="email" formControlName="email">
         </div>
       
-        <a routerLink="/comfirm"><button class="button" type="submit" (click)="onSubmit()">COMFIRM ORDER</button></a>
+        <a routerLink="/comfirm"><button class="button" type="submit" (click)="onSubmit()" [disabled]="calcForm.invalid">COMFIRM ORDER</button></a>
     
       </form>
 </section>
