@@ -1,5 +1,8 @@
- <section class="main-section">
+<div *ngIf="items.length == 0 ">
+  <h1 class="emptyMessage">The cart is empty. Please choose a movie.</h1>
+</div>
 
+<section class="main-section">
 <!--User input form-->
 <section class="form">
       <form #calcForm='ngForm' (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">

@@ -43,7 +43,6 @@ ul{
       list-style: none;
       font-size: 0.9rem;
       font-weight: lighter;
-
     }
 }
 
@@ -57,4 +56,10 @@ ul{
 
 .ng-invalid:not(form) {
     border-bottom: 2px solid red;
+}
+
+.emptyMessage {
+    color:orangered;
+    text-align: center;
+    font-family: 'Shippori Antique B1', sans-serif;
 }

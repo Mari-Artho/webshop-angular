@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import { CartService } from './service/cart.service';
+import { IProduct } from './models/IProduct';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,5 @@ export class AppComponent {
       this.countItem = item;
     });
   }
-  
   
 }
