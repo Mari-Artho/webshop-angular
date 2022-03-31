@@ -17,6 +17,7 @@ import { IUser } from 'src/app/models/IUser';
 export class CheckoutComponent implements OnInit {
   public products: any = [];
   items = this.cartService.items;
+  countItem:number = 0;
 
   //For total price
   //Subject class can be reactivated at any time, such as when the user clicks
@@ -74,9 +75,13 @@ export class CheckoutComponent implements OnInit {
       localStorage.setItem('order', userInfo);
       //Empty cart items when user click 'confirm button'.
       localStorage.removeItem('cart');
+      // // //To empty cart items
+      // // this.cartService.countOrder().subscribe((item)=>{
+      // //   this.countItem = item;
+      // })
     }
     
-  ngOnInit(): void {
+  ngOnInit():void {
   }
 
   //Calculate total price

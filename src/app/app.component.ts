@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { CartService } from './service/cart.service';
-import { OrderService } from './service/order.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +7,16 @@ import { OrderService } from './service/order.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  countItem:number = 0;
+  countItem:any = 0;
 
-  constructor ( private cart: CartService){};
+  constructor ( private cart: CartService){
+  };
 
-  ngOnInit(){
+  ngOnInit():any{
     this.cart.countOrder().subscribe((item)=>{
       this.countItem = item;
     });
   }
+  
   
 }
