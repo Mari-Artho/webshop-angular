@@ -47,3 +47,24 @@ nav{
     text-align: center;
   }
   
+  /* 480px, smart phone */
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+   .badge {
+    // position: absolute;
+    top: 200px;
+    // right:60px;
+    // line-height: 13px;
+    // width: 13px;
+    // height: 13px;
+    // text-align: center;
+   }
+
+   h1 {
+    font-size: 30px;
+   }
+   
+}
