@@ -19,12 +19,12 @@
 
 .product-added {
   font-size: 1rem;
-  color: #4d4c4c;
+  color: rgb(77, 76, 76);
 }
 
 img {
   width: 333px;
-  height: 52px;
+  height: 500px;
 }
 
 ul {
@@ -41,12 +41,27 @@ button {
   height: 40px;
   border-radius: 100px;
   font-size: 15px;
-  background-color: #fd7405;
+  background-color: rgb(253, 116, 5);
   color: white;
 }
 
 .backBtn {
-  background-color: #f4d59d;
+  background-color: rgb(244, 213, 157);
   color: black;
+}
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px) {
+  .product {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  img {
+    width: 260px;
+    height: 430px;
+  }
+  .product-image {
+    margin-right: 20px;
+  }
 }
 /*# sourceMappingURL=detail.component.css.map */

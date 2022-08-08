@@ -52,7 +52,7 @@ td{
 }
 
 .td-ttlPrice{
-    margin-left: 20px;
+   margin-left: 20px;
    font-weight: bolder;
 }
 
@@ -87,4 +87,50 @@ td{
     border-radius: 10px;
     background-color: orange;
     margin-left: 70%;
+}
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px){
+    .table,tr,  td {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        // justify-content: left;
+        margin-left: 0;
+    }
+
+    th {
+        display: none;
+    }
+
+    // tr {
+    //     justify-items: center;
+    // }
+
+    // img, button {
+    //     justify-content: center;
+    // }
+
+    .table-row{
+        td{
+        border-bottom: none;
+        }
+      }
+
+    .th-index {
+        border-bottom: 1px dashed;
+    }
+
+    .item-price {
+        color:red;
+        margin-left: 0;
+    }
+
+    .total-price {
+        margin-right: 5px;
+    }
+
+    .btnPosition {
+        width: 50%;
+    }
 }

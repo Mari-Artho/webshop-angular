@@ -50,3 +50,23 @@ button {
     background-color: rgb(244, 213, 157);
     color: black;
 }
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px){
+    .product {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    img {
+        width: 260px;
+        height: 430px;
+    }
+
+    // .product-detail {
+    //     margin: 0 10px 20px 10px;
+    //  }
+    .product-image {
+        margin-right: 20px;
+    }
+}

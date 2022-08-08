@@ -91,8 +91,8 @@ button {
   .input-section {
     margin: 15px;
   }
-  .navBtn:act {
-    color: red;
+  .navBtn:active {
+    color: p;
   }
 }
 /*# sourceMappingURL=home.component.css.map */
