@@ -1,5 +1,7 @@
 #Test is in HomeComponent and ComfirmComponent.
 
+##[Link to deploy](https://mamazon3.netlify.app/)
+
 # WebshopAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
