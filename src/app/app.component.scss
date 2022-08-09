@@ -47,7 +47,7 @@ nav{
     text-align: center;
   }
   
-  /* 480px, smart phone */
+/* 480px, smart phone */
 @media screen and (max-width: 480px) {
     header {
         flex-direction: column;
@@ -64,11 +64,29 @@ nav{
    }
 
    h1 {
-    font-size: 30px;
+    font-size: 22px;
    }
 
    .adminBtn {
     margin-left: 50px;;
    }
+
+   ul a li {
+    justify-content: center;
+   }
+
+   .badge {
+    top: 90px;
+    right:25px;
+    font-size: 12px;
+    line-height: 13px;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    background-color: #ff0000; 
+    border: 4px solid #ff0000;
+    color: #ffffff;
+    text-align: center;
+  }
    
 }

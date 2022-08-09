@@ -1,16 +1,23 @@
 h1 {
-  margin-left: 40px;
+  text-align: center;
 }
 
 button {
   width: 150px;
   height: 30px;
   font-size: 1rem;
-  background-color: #f45858;
+  background-color: rgb(244, 88, 88);
   margin: 10px 0 20px 0;
 }
 
 ul li {
   list-style: none;
+}
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px) {
+  ul {
+    margin: px;
+  }
 }
 /*# sourceMappingURL=admin.component.css.map */

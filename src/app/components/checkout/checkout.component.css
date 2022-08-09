@@ -1,11 +1,26 @@
 .main-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-areas: "form cart" "cartBtn cartBtn";
   font-family: "Shippori Antique B1", sans-serif;
 }
 
+.form {
+  grid-area: form;
+}
+
+.cart {
+  grid-area: cart;
+}
+
+.cartBtn {
+  grid-area: cartBtn;
+  text-align: center;
+}
+
 form {
-  margin: 20px 0 20px 30%;
+  margin: 20px 0 20px 20%;
 }
 
 input {
@@ -25,7 +40,6 @@ button {
   height: 50px;
   border-radius: 10px;
   background-color: orange;
-  margin: 40px 0 0 50%;
   font-size: 1rem;
 }
 
@@ -58,5 +72,27 @@ ul li {
   color: orangered;
   text-align: center;
   font-family: "Shippori Antique B1", sans-serif;
+}
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px) {
+  .emptyMessage {
+    font-size: 95%;
+  }
+  .main-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 0.4fr;
+    grid-template-areas: "cart" "form" "cartBtn";
+  }
+  .cart {
+    margin: 20px 30px 20px 120px;
+    text-align: left;
+  }
+  .cart ul li {
+    margin-left: 0;
+  }
+  button {
+    width: 150px;
+  }
 }
 /*# sourceMappingURL=checkout.component.css.map */

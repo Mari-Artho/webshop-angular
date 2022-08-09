@@ -91,11 +91,10 @@ td{
 
 /* 480px, smart phone */
 @media screen and (max-width: 480px){
-    .table,tr,  td {
+    .table, tr, td {
         display: block;
         display: flex;
         flex-direction: column;
-        // justify-content: left;
         margin-left: 0;
     }
 
@@ -103,28 +102,15 @@ td{
         display: none;
     }
 
-    // tr {
-    //     justify-items: center;
-    // }
-
-    // img, button {
-    //     justify-content: center;
-    // }
-
     .table-row{
         td{
         border-bottom: none;
         }
       }
 
-    .th-index {
-        border-bottom: 1px dashed;
-    }
-
-    .item-price {
-        color:red;
-        margin-left: 0;
-    }
+    // .th-index {
+    //     border-bottom: 1px dashed;
+    // }
 
     .total-price {
         margin-right: 5px;
@@ -133,4 +119,25 @@ td{
     .btnPosition {
         width: 50%;
     }
+
+    .table-row{
+        border-bottom: 1px dashed;
+      }
+
+    .th-index {
+        margin-top: 25px;
+    }
+
+    .th-title {
+        width: 90%;
+    }
+    
+    .th-price {
+        width:100%;
+    }
+
+    .item-price {
+        margin-right: 60%;
+    }
+    
 }

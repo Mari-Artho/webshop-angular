@@ -15,3 +15,10 @@ ul{
         list-style: none;
     }
 }
+
+/* 480px, smart phone */
+@media screen and (max-width: 480px){
+    ul {
+        margin: 10px;
+    }
+}
