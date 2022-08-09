@@ -40,10 +40,6 @@ td{
     text-align: justify;
 }
 
-.th-poster{
-    width: 40% ;
-}
-
 .total-price{
     display: flex;
     justify-content: end;
@@ -107,11 +103,7 @@ td{
         border-bottom: none;
         }
       }
-
-    // .th-index {
-    //     border-bottom: 1px dashed;
-    // }
-
+      
     .total-price {
         margin-right: 5px;
     }
